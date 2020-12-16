@@ -28,7 +28,7 @@ public class DownLoadController extends HttpServlet {
         String newFilePath = FileUtils.newFilePath(realPath, name);
         String filePath = newFilePath + "\\" + fileName;
         //设置下载响应头
-        response.setHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode(name, "UTF-8"));
+        response.setHeader("content-disposition", "attachment;filename=" + URLEncoder.encode(name, "UTF-8"));
         FileInputStream inputStream = new FileInputStream(filePath);
         ServletOutputStream outputStream = response.getOutputStream();
         byte[] buf = new byte[1024 * 1024 * 100];
